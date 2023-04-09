@@ -1,0 +1,254 @@
+{
+  "info": {
+    "_postman_id": "294392cf-5f46-409b-b3f6-2afc7bfc2cfe",
+    "name": "My_calender",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Signup",
+      "id": "3b71fbf6-b053-43cf-9b4e-afd246ebce01",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\":\"Rahul\",\n    \"email\":\"rahulkrishnanr081@gmail.com\",\n    \"password\":\"Rahul@123\",\n    \"confirm_password\":\"Rahul@123\",\n    \"role\":\"user\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/api/v1/signup"
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "id": "83463ace-c115-42b2-9e1e-555ad0b80759",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODk0MTc2MjJmMmYzNzkwZTk4Mjc4ZCIsImlhdCI6MTYxOTYwNzk2OSwiZXhwIjoxNjIwMjEyNzY5fQ.YYH6hu0z5ge_zyJspwVNey4LmZPWiDs5uNXzf1Qv3vc",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"rahulkrishnanr081@gmail.com\",\n    \"password\": \"Rahul@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/login"
+      },
+      "response": []
+    },
+    {
+      "name": "FetchUsers",
+      "id": "a8aa73e0-a109-47b1-8d6f-52d381c1f501",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTAwNWZlMDRmYTY3MTJmMmMzZTY4YyIsImlhdCI6MTYyMDMyMjgyMiwiZXhwIjoxNjIwNDA5MjIyfQ.-5EmdRLikkcBhczDcVU887Um-Oy914bHftN7ziI71pQ",
+            "type": "text"
+          }
+        ],
+        "url": "{{host}}/api/v1/fetchUsers"
+      },
+      "response": []
+    },
+    {
+      "name": "email verification",
+      "id": "09c03925-7dad-4f0c-9746-7ed3d3550c74",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{host}}/api/v1/account_verification/bd157f60ced130d20753970cf971f663e87c4e57"
+      },
+      "response": []
+    },
+    {
+      "name": "generate otp",
+      "id": "c9ccf440-0d67-47be-a54a-3d3a97414fbc",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"rahulkannanrk1999@gmail.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/api/v1/generate_otp"
+      },
+      "response": []
+    },
+    {
+      "name": "forgot password",
+      "id": "76633819-757a-4d1f-be7c-3df91200da49",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"otp\":\"500059\",\n    \"password\":\"Rahul@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/api/v1/forgot_password"
+      },
+      "response": []
+    },
+    {
+      "name": "Fetched User ID",
+      "id": "d61f4785-daee-43a0-9ff5-3f21be620365",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{host}}/api/v1/fetch_user_id/609005fe04fa6712f2c3e68c"
+      },
+      "response": []
+    },
+    {
+      "name": "add schedule",
+      "id": "88693e46-d1be-4673-aa13-209f3a02dcba",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTAwNWZlMDRmYTY3MTJmMmMzZTY4YyIsImlhdCI6MTYyMDIzMzQ0MywiZXhwIjoxNjIwMzE5ODQzfQ.UaVQygCHH16y6qpxGYkH4keaiEkH32ATc2PltWg60hQ",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventName\": \"Quick Call(Test)\",\n    \"description\": \" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab exercitationem\",\n    \"organizer\": \"rahulkrishnanr081@gmail.com\",\n    \"eventDate\": \"2021/05/08\",\n    \"startTime\": \"09:30\",\n    \"endTime\": \"10:05\",\n    \"meetURL\": \"http://meetURL.com\",\n    \"participants\": [\n        \"rahulkrishnanr016@gmail.com\",\n        \"rahulkannanrk1999@gmail.com\"\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/api/v1/schedule/insert"
+      },
+      "response": []
+    },
+    {
+      "name": "fetch  schedule ",
+      "id": "321c1058-fc64-4e1c-9ad8-e8d7c473e6ee",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOTAwNWZlMDRmYTY3MTJmMmMzZTY4YyIsImlhdCI6MTYyMDQxNDk5MCwiZXhwIjoxNjIwNTAxMzkwfQ.P4-MHIAo-PZog0-gh7r2PIjfQcYg92OvwbfyB8v378w",
+            "type": "text"
+          }
+        ],
+        "url": "{{host}}/api/v1/schedule/read"
+      },
+      "response": []
+    },
+    {
+      "name": "delete schedule by id",
+      "id": "cfb7f001-0db7-49c0-91e9-0a9cb6e3c6da",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGNlYzk0YjI3NmI2MjVlMTJmYjhhOCIsImlhdCI6MTYyMDAxNjU4NywiZXhwIjoxNjIwMTAyOTg3fQ.HYqnnEQMiJ4MtMtvg1LQ_yNMH8_ZBm30-G9Fc2v420g",
+            "type": "text"
+          }
+        ],
+        "url": "{{host}}/schedule/delete/608f7ddade92f4165ebd36d8"
+      },
+      "response": []
+    },
+    {
+      "name": "ChangePassword",
+      "id": "818b7bad-cc88-49e3-a009-5cb7722fe57e",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"rahulkrishnanr081@gmail.com\",\n    \"newPassword\": \"Rahul@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}/api/v1/changePassword"
+      },
+      "response": []
+    },
+    {
+      "name": "Schedule Accept",
+      "id": "214fc4e0-b1b3-4783-aa44-3cad95072920",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/add_notification/rahulkrishnanr016@gmail.com/6092f194596cdd4d985eeb5f/123456"
+      },
+      "response": []
+    },
+    {
+      "name": "Schedule Declined..",
+      "id": "be747976-ae35-4269-8abd-f6ad5e29a517",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/delete_notification/rahulkrishnanr016@gmail.com/6094dece8453810022ba1fa5/123456"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "f8b8c94a-0e2c-40b4-b239-9b2d2dbebf0b",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "4731f9f4-be36-4e77-a286-957455210f56",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "79f5e8b7-5e1e-4bca-88ad-32832f5d9858",
+      "key": "host",
+      "value": "https://appointy-backend.herokuapp.com"
+    }
+  ]
+}

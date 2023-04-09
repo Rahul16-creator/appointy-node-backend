@@ -1,0 +1,5 @@
+MONGO_URL=mongodb://127.0.0.1:27017
+DB_NAME=Mycalender
+SECRET=Appointy
+SEND_GRID=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
+SEND_GRID_MAIL=rahulkrishnan@codingmart.com

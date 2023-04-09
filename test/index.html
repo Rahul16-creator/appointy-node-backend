@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: black;
+      }
+      
+      .top {
+        padding: 10px 30px;
+      }
+
+      a{
+        text-decoration: none;
+      }
+      .dates {
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.185);
+        padding: 20px 0;
+        width: 20%;
+        display: inline-block;
+        height: 218px;
+        float: left;
+        /* background-color:  rgba(0, 0, 0, 0.185); */
+      }
+
+      .decision {
+        border: 1px solid rgba(0, 0, 0, 0.185);
+        padding: 20px;
+        width: 40%;
+        display: inline-block;
+        height: 218px;
+        float: left;
+      }
+
+      .agenda {
+        border: 1px solid rgba(0, 0, 0, 0.185);
+        padding: 20px;
+        width: 40%;
+        display: inline-block;
+        height: 218px;
+      }
+
+      .fas {
+        width: 8rem;
+        color: #2827cc;
+        object-fit: contain;
+        margin-top: 5px;
+      }
+
+      .decision h1 {
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .decision a {
+        color: #2827cc;
+        text-decoration: none;
+        /* font-size: 16px; */
+      }
+
+      .details_1 {
+        margin: 10px 0;
+        display: inline-block;
+      }
+
+      .details_1_left {
+        float: left;
+        color: #777777;
+        display: inline-block;
+      }
+      .details_1_right {
+        display: inline-block;
+        margin-left: 54px;
+      }
+
+      .details_2 {
+        margin: 5px 0;
+        display: inline-block;
+      }
+
+      .details_2_left {
+        float: left;
+        display: inline-block;
+        color: #777777;
+      }
+      .details_2_right {
+        display: inline-block;
+        margin-left: 30px;
+      }
+
+      .decision_btn {
+        margin-top: 22px;
+      }
+
+      .btn {
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #e3e3e3;
+        padding: 10px 30px;
+        outline: none;
+        background-color: #fff;
+      }
+
+      .success {
+        border: 2px solid #1faa59;
+        color: #000;
+      }
+
+      .danger {
+        border: 2px solid #bf3325;
+        margin-left: 10px;
+        color: #000;
+      }
+      .success:hover,
+      .success:active {
+        color: #fff;
+        background-color: #1faa59;
+      }
+
+      .danger:hover {
+        color: #fff;
+        background-color: #bf3325;
+      }
+      .bottom {
+        width: 95%;
+        border: 1px solid rgba(0, 0, 0, 0.329);
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="dates">
+        <img
+        class="fas"
+        src="https://firebasestorage.googleapis.com/v0/b/react-spring-boot-user-profile.appspot.com/o/images%2Fdownload.jpeg?alt=media&token=704d9b79-a670-4ba7-99b6-9121eefc5335"
+        alt="logo_calender"
+      />      </div>
+      <div class="decision">
+        <h1 style="text-transform:capitalize;"><%= scheduleData.eventName %></h1 style="text-transform: uppercase;">
+        <a href="#">View on Appointy Calendar </a>
+        <div class="details">
+          <div class="details_1">
+            <p class="details_1_left">When</p>
+            <p class="details_1_right"><%= scheduleData.eventDate %>  (IST)</p>
+          </div>
+          <div class="details_2">
+            <p class="details_2_left">Organiser</p>
+            <p class="details_2_right"><%= scheduleData.organizer %></p>
+          </div>
+        </div>
+
+        <div class="decision_btn">
+          <a href="<%= AcceptLink %>" class="btn success" style="color: #000;">Accept</a>
+          <a href="<%=DeclineLink  %>" class="btn danger" style="color: #000;">Decline</a>
+        </div>
+      </div>
+      <div class="agenda" style="overflow-y: scroll">
+        <h2 style="margin-bottom: 10px">Details :</h2>
+        <div class="time">
+          <div class="time_start" style="margin-bottom: 7px">
+            <span
+              class="time_start_title"
+              style="
+                margin-right: 10px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #777777;
+              "
+              >Start time :
+            </span>
+            <span class="time_value"><%= scheduleData.startTime %></span>
+          </div>
+          <div class="time_end" style="margin-bottom: 7px">
+            <span
+              class="time_end_title"
+              style="
+                margin-right: 28px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #777777;
+              "
+              >end time :</span
+            >
+            <span class="time_value"><%= scheduleData.endTime %></span>
+          </div>
+        </div>
+        <div class="description">
+          <h3 class="description_title">Meeting Description :</h3>
+          <p style="margin-left: 10px; margin-top: 5px">
+            <%= scheduleData.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bottom" style="margin-left: 30px">
+      <h2 style="background-color: #2827cc; padding: 10px; color: #fff">
+        Members in Meeting
+      </h2>
+      <h3 style="margin: 5px 17px; font-weight: 500"><%= scheduleData.eventName %></h3>
+      <div style="padding: 20px">
+        <div style="margin-bottom: 10px">
+          <span style="color: #777">When</span>
+          <span style="margin-left: 60px"><%= scheduleData.eventDate %>  (IST)</span>
+        </div>
+        <div style="color: #777; margin-bottom: 10px">
+          Meeting Link:
+          <a href="#" style="margin-left: 15px; color: #2827cc">
+            <%= scheduleData.meetURL %>
+          </a>
+        </div>
+        <h2>Members :</h2>
+        <ul>
+          <% for (var i =0; i < scheduleData.participants.length; i++ ) { %>
+          <li style="padding: 7px">
+            > <a href="#"> <%= scheduleData.participants[i] %> </a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
